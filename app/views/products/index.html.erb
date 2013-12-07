@@ -3,20 +3,21 @@
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Book Cover</th>
+      <th>Author</th>
+      <th>Description</th>
     </tr>
   </thead>
 
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td> <%= product.imgurl %>  </td>
-        <%= image_tag(product.imgurl) %>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag(product.imgurl) %></td>
+        <td><%= product.author %></td>
+        <td><%= product.description %></td>
+        <td><%= link_to 'Show', product %><br/>
+        <%= link_to 'Edit', edit_product_path(product) %> <br/>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
