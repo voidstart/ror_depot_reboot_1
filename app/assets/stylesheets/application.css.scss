@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+#cols {
+	#sidepane {
+		float: left
+	}
+	#productpane {
+		margin-left: 10em
+	}
+}
