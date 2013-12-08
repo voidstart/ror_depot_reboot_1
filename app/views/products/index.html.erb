@@ -1,27 +1,20 @@
 <h1>Listing products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Book Cover</th>
-      <th>Author</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @products.each do |product| %>
-      <tr>
-        <td><%= image_tag(product.imgurl) %></td>
-        <td><%= product.author %></td>
-        <td><%= product.description %></td>
-        <td><%= link_to 'Show', product %><br/>
+
+    <div class="entry">
+        <div class="cover_img"><%= image_tag(product.imgurl) %></div>
+        <div class="right_block">
+        <div class="author"><%= product.author %></div>
+        <div class="desc"><%= product.description %></div>
+        <div class="price"><%= product.price %></div>
+        </div>
+        <%= link_to 'Show', product %><br/>
         <%= link_to 'Edit', edit_product_path(product) %> <br/>
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+
     <% end %>
-  </tbody>
-</table>
 
 <br>
 

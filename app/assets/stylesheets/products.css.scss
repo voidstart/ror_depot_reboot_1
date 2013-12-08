@@ -1,3 +1,20 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.entry {
+	border-bottom: 1px dotted #FF0000;
+	overflow: auto;
+
+	.cover_img {
+		float: left;
+	}
+
+	.right_block {
+		margin-left: 150px;
+	}
+
+	.author {
+		font-weight: bold;
+	}
+}
