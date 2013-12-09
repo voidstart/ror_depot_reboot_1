@@ -11,6 +11,9 @@
  *= require_self
  *= require_tree .
  */
+#banner {
+	border-bottom: 2px solid;
+}
 
 #cols {
 	#sidepane {
