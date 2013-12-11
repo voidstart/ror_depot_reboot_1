@@ -1,4 +1,6 @@
 App::Application.routes.draw do
+  resources :carts
+
   resources :cart_items
 
   resources :products
