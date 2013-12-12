@@ -1,2 +1,14 @@
-<h1>Store#index</h1>
-<p>Find me in app/views/store/index.html.erb</p>
+<h1>voidstart's bookstore</h1>
+
+<% @products.each do |product| %>
+	<div class="entry">
+	    <div class="cover_img"><%= image_tag(product.imgurl) %></div>
+	    <div class="right_block">
+	        <div class="title"><%= product.title %></div>
+	        <div class="author"><%= product.author %></div>
+	        <div class="desc"><%= product.description %></div>
+	        <div class="price"><%= product.price %></div>
+	    </div>
+	    <%= button_to "Add to Cart", cart_items_path(product_id: product) %>
+	</div>
+<% end %>
