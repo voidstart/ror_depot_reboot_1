@@ -1,4 +1,5 @@
 App::Application.routes.draw do
+  get "store/index"
   resources :carts
 
   resources :cart_items
