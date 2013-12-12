@@ -34,7 +34,7 @@ class CartItemsController < ApplicationController
       if @cart_item.save
         format.html { redirect_to store_path, notice: 'Cart item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @cart_item }
-        format.js
+        format.js { @newly_item = @cart_item }
       else
         format.html { render action: 'new' }
         format.json { render json: @cart_item.errors, status: :unprocessable_entity }

@@ -1,2 +1,8 @@
-<%= cart_item.product.title %> 
-<%= cart_item.product.price %> USD &times; <%=  cart_item.quantity %>
+<% if cart_item == @newly_item %>
+	<div id="newly_item">
+<% else %>
+	<div>
+<% end %>
+		<%= cart_item.product.title %> 
+		<%= cart_item.product.price %> USD &times; <%=  cart_item.quantity %>
+	</div>
