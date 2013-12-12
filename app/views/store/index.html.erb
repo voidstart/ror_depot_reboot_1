@@ -9,6 +9,6 @@
 	        <div class="desc"><%= product.description %></div>
 	        <div class="price"><%= product.price %></div>
 	    </div>
-	    <%= button_to "Add to Cart", cart_items_path(product_id: product) %>
+	    <%= button_to "Add to Cart", cart_items_path(product_id: product), remote: true %>
 	</div>
 <% end %>
