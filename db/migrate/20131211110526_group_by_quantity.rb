@@ -11,6 +11,5 @@ class GroupByQuantity < ActiveRecord::Migration
   			end
   		end
   	end
-
   end
 end
