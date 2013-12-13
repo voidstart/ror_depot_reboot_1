@@ -12,6 +12,15 @@
   <% end %>
 
   <div class="actions">
+    <%= f.label "User name:" %>
+    <%= f.text_field :username %>
+    <br/>
+    <%= f.label "Password" %>
+    <%= f.password_field :password, size: 40 %>
+    <br/>
+    <%= f.label :password_confirmation, "Confirm:" %>
+    <%= f.password_field :password_confirmation, size: 40 %>
+    <br/>
     <%= f.submit %>
   </div>
 <% end %>
