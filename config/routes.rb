@@ -1,4 +1,7 @@
 App::Application.routes.draw do
+  get "sessions/new"
+  get "sessions/create"
+  get "sessions/destory"
   resources :users
 
   get "store/index"
