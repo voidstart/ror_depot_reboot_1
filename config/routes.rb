@@ -1,4 +1,6 @@
 App::Application.routes.draw do
+  resources :orders
+
   get "admin" => "admin#index"
 
   controller :sessions do
