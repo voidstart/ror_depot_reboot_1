@@ -12,6 +12,8 @@
 	        <div class="desc"><%= product.description %></div>
 	        <div class="price"><%= product.price %></div>
 	    </div>
-	    <%= button_to "Add to Cart", cart_items_path(product_id: product), remote: true %>
+	    <% if logged_in? %>
+		    <%= button_to "Add to Cart", cart_items_path(product_id: product), remote: true %>
+	    <% end %>
 	</div>
 <% end %>
