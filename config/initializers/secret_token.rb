@@ -3,3 +3,5 @@ App::Application.config.secret_token = if Rails.env.development? or Rails.env.te
 else
   ENV['SECRET_TOKEN']
 end
+
+App::Application.config.secret_key_base = "rails+-1"
