@@ -25,6 +25,8 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    cart = cur_cart
+    @order.add_cart_items_from_cart(cart)
 
     respond_to do |format|
       if @order.save
@@ -69,6 +71,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params[:order]
+      params[:order].permit(:name, :address, :email, :order_id)
     end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217095634) do
+ActiveRecord::Schema.define(version: 20131217111749) do
 
   create_table "cart_items", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131217095634) do
     t.integer  "cart_id"
     t.integer  "product_id"
     t.integer  "quantity",   default: 1
+    t.integer  "order_id"
   end
 
   create_table "carts", force: true do |t|
