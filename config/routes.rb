@@ -11,7 +11,11 @@ App::Application.routes.draw do
 
   get "store/index"
 
-  resources :carts
+  resources :carts do
+    member do
+      get 'checkout'
+    end
+  end
 
   resources :cart_items
 

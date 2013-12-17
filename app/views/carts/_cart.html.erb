@@ -1,7 +1,11 @@
 <p> Cart items: </p> <br/>
+
 <% cart.cart_items.each do |item| %>
 	<%= render item %>
  	<br/>
 <% end %>
+
 <br/>
-Total price: <%=  cart.total_price %> USD
+Total price: <%=  cart.total_price %> USD  <br/>
+
+<%= button_to "Checkout", checkout_cart_path(cart) , method: :get %>

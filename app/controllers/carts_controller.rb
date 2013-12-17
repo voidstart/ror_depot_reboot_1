@@ -37,6 +37,10 @@ class CartsController < ApplicationController
     end
   end
 
+  # GET /carts/1/checkout
+  def checkout
+  end
+
   # PATCH/PUT /carts/1
   # PATCH/PUT /carts/1.json
   def update
