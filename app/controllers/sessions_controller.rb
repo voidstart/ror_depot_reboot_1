@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :check_login
+  
   def new
   end
 
@@ -15,5 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destory
+    session[:user_id] = nil
+    redirect_to store_url, alert: "Successful logout"
   end
 end

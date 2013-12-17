@@ -15,6 +15,7 @@
 		<a href="/cart_items">Cart Items</a> <br/>
 		<a href="/carts">Carts</a> <br/>
 		<a href="/users">Users</a> <br/>
+		<%= button_to "Logout", logout_path, method: :delete %> <br/>
 		<div id="cartpane">
 			<% if @cart %>
 				<%= render @cart %>
