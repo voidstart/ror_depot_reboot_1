@@ -15,12 +15,15 @@
 		<a href="/cart_items">Cart Items</a> <br/>
 		<a href="/carts">Carts</a> <br/>
 		<a href="/users">Users</a> <br/>
+		<a href="/orders">Orders</a> <br/>
 		<% if logged_in? %>
 			<%= button_to "Logout", logout_path, method: :delete %> <br/>
 		<% end %>
 		<div id="cartpane">
 			<% if @cart %>
-				<%= render @cart %>
+				<% unless @cart.cart_items.empty? %>
+					<%= render @cart %>
+				<% end %>
 			<% end %>
 		</div>
 	</div>
