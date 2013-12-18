@@ -13,8 +13,9 @@ class SessionsControllerTest < ActionController::TestCase
   end
 
   test "should get destory" do
-    get :destory
-    assert_response :success
+    delete :destory
+    assert_redirected_to store_url
+    assert_equal nil, session[:user_id]
   end
 
 end
