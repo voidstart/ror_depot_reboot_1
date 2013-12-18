@@ -6,9 +6,10 @@ class SessionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
-    assert_response :success
+  test "should post create (login)" do
+    post :create, username: "dw", password: "dw"
+    assert_redirected_to admin_url
+    assert_equal users(:one).id, session[:user_id]
   end
 
   test "should get destory" do
