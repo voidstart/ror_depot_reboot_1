@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "App" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "VS Books" %></title>
     <!-- Original rails app template header -->
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -48,7 +48,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">App</a>
+          <a class="brand" href="#">VS Books</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Products", "/products"  %></li>
@@ -60,9 +60,9 @@
             <ul class="nav pull-right">
               <li>
                 <% if logged_in? %>
-                <%= link_to "Logout", logout_path, method: :delete %> <br/>
+                  <%= link_to "Logout", logout_path, method: :delete %> <br/>
                 <% else %>
-                <%= link_to "Login", login_path %>
+                  <%= link_to "Login", login_path %>
                 <% end %>
               </li>
             </ul>
@@ -75,12 +75,6 @@
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
             <div id="cartpane">
             	<% if @cart %>
 	            	<% unless @cart.cart_items.empty? %>
@@ -97,7 +91,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p>&copy; VoidStart 2013</p>
       </footer>
 
     </div> <!-- /container -->

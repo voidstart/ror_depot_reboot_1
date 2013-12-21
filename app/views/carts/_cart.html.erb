@@ -1,4 +1,6 @@
-<p> Cart items: </p> <br/>
+<fieldset>
+
+<legend> Cart items: </legend> <br/>
 
 <% cart.cart_items.each do |item| %>
 	<%= render item %>
@@ -9,3 +11,5 @@
 Total price: <%=  cart.total_price %> USD  <br/>
 
 <%= button_to "Checkout", new_order_path, method: :get %>
+
+</fieldset>
