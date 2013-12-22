@@ -13,8 +13,30 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+        <div class="contanier-fluid">
+          <div class="row-fluid">
+            <div class="span3">
+              <div class="well sidebar-nav">
+                <div id="cartpane">
+                  <% if @cart %>
+                    <% unless @cart.cart_items.empty? %>
+                      <%= render @cart %>
+                    <% end %>
+                  <% end %>
+                </div>
+              </div><!--/.well -->
+            </div><!--/span-->
+            <div class="span9">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div><!--/row-->
+
+          <footer>
+            <p>&copy; VoidStart 2013</p>
+          </footer>
+
+        </div> <!-- /container -->
     </main>
   </body>
 </html>
