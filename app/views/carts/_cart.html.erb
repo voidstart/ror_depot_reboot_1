@@ -1,13 +1,21 @@
 <fieldset>
 	<legend> My Cart </legend>
-	<% cart.cart_items.each do |item| %>
-		<%= render item %>
-	<br/>
-	<% end %>
-	<br/>
-	Total price: <%=  cart.total_price %> USD
-	<br/>
-	<br/>
+	<table class="table">
+		<tr>
+			<th>Title</th>
+			<th>Price</th>
+			<th>Quantity</th>
+		</tr>
+		<% cart.cart_items.each do |item| %>
+				<%= render item %>
+				<% end %>	
+		<tr>
+			<td>Total price:</td>
+			<td><%=  cart.total_price %> USD </td>	
+			<td></td>
+		</tr>		
+	</table>
+
 
 	<div>
 		<%= button_to "Checkout", new_order_path, method: :get %>
