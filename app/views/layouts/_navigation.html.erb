@@ -14,12 +14,24 @@
       <ul class="nav navbar-nav">
         <%= render 'layouts/navigation_links' %>
       </ul>
+
       <ul class="nav navbar-nav pull-right">
-        <li>
+        <li class="divider-vertical"></li>
+        <li class=dropdown>
           <% if logged_in? %>
             <%= link_to "Logout", logout_path, method: :delete %> <br/>
           <% else %>
-            <%= link_to "Login", login_path %>
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+              <%= form_tag(controller: :sessions, action: :create) do %>
+                <%= label_tag :username, "User name" %>
+                <%= text_field_tag :username , params[:username] %>
+                <%= label_tag :password, "password" %>
+                <%= password_field_tag :password, params[:password] %>
+
+                <%= submit_tag "Login" %>
+              <% end %>
+            </div>
           <% end %>
         </li>
       </ul>
