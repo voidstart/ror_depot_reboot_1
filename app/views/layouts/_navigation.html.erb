@@ -22,14 +22,13 @@
             <%= link_to "Logout", logout_path, method: :delete %> <br/>
           <% else %>
             <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
-             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 10px;">
               <%= form_tag(controller: :sessions, action: :create) do %>
-                <%= label_tag :username, "User name" %>
-                <%= text_field_tag :username , params[:username] %>
-                <%= label_tag :password, "password" %>
-                <%= password_field_tag :password, params[:password] %>
-
-                <%= submit_tag "Login" %>
+              <%= label_tag :username, "User Name" %>
+                <%= text_field_tag :username , params[:username], placeholder: "User Name", class: "form-control" %>
+                <%= label_tag :password, "Password" %>
+                <%= password_field_tag :password, params[:password], placeholder: "Password", class: "form-control" %>
+                <%= submit_tag "Login", class: "btn btn-primary" %>
               <% end %>
             </div>
           <% end %>
