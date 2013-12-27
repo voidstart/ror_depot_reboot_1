@@ -10,6 +10,18 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
+    active_utils (2.0.1)
+      activesupport (>= 2.3.11)
+      i18n
+    activemerchant (1.42.3)
+      active_utils (~> 2.0, >= 2.0.1)
+      activesupport (>= 2.3.14, < 5.0.0)
+      builder (>= 2.1.2, < 4.0.0)
+      i18n (~> 0.5)
+      json (~> 1.7)
+      money (< 7.0.0)
+      nokogiri (~> 1.4)
+    activemerchant_patch_for_china (0.2.0)
     activemodel (4.0.1)
       activesupport (= 4.0.1)
       builder (~> 3.1.0)
@@ -55,8 +67,17 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     minitest (4.7.5)
+    money (6.0.0)
+      i18n (~> 0.6.4)
     multi_json (1.8.2)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
+    pay_fu (1.0.0)
+      activemerchant
+      activemerchant_patch_for_china
+      rails
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -125,6 +146,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails
+  pay_fu
   rails (= 4.0.1)
   rails_layout
   sass-rails (~> 4.0.0)
